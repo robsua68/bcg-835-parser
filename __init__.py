@@ -3,7 +3,8 @@ from tkinter import E
 from typing import List
 from warnings import warn
 
-from bcg_edi_835_parser.transaction_set import TransactionSet, TransactionSets
+from bcg_edi_835_parser.transaction_set.transaction_set import TransactionSet
+from bcg_edi_835_parser.transaction_set.transaction_sets import TransactionSets
 
 def parse(path: str, debug: bool=False) -> TransactionSets:
     if path[0] == '~':
