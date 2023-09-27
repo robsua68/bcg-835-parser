@@ -6,7 +6,7 @@ install_requires = [
 
 setuptools.setup(
     name="bcg-edi-835-parser",
-    version="1.6.0",
+    version="1.7.0",
     author="Roberto Suarez",
     author_email="robsua68@hotmail.com",
     description="B Consulting Group EDI 835 file format parser.",
