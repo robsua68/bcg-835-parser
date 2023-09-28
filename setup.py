@@ -2,10 +2,7 @@
 import setuptools
 
 
-
-install_requires = [
-    'pandas'
-]
+install_requires = ["pandas"]
 
 # tests_require = [
 #     'pytest'
@@ -28,6 +25,5 @@ setuptools.setup(
     ],
     install_requires=install_requires,
     # tests_require=tests_require,
-    python_requires='>=3.11',
-) # Setup (\n)
-# End-of-file (EOF)
+    python_requires=">=3.11",
+)

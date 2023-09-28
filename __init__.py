@@ -1,10 +1,12 @@
-""" bcg_edi_835_parser/__init__.py """
+""" EDI 835 Parser """
 # Importing standard libraries
 import os
 from tkinter import E
 from typing import List
 from warnings import warn
 
+
+# Local imports
 from bcg_edi_835_parser.transaction_set.transaction_set import TransactionSet
 from bcg_edi_835_parser.transaction_set.transaction_sets import TransactionSets
 

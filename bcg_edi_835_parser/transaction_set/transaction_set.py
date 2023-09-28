@@ -94,6 +94,7 @@ class TransactionSet:
         elif claim.claim_statement_period_end:
             end_date = claim.claim_statement_period_end.date
 
+        # Adding Claim Number in the output
         datum = {
             "marker": claim.claim.marker,
             "patient": claim.patient.name,

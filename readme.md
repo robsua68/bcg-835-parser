@@ -3,7 +3,9 @@
 ### bcg-edi-835-parser: a lightweight EDI 835 file parser
 This package provides a simple-to-use Python interface to EDI 835 Health Care Claim Payment and Remittance Advice files.
 
-*This package is made by Roberto Suarez, the company behind is B Consulting Group, an industry leading Consulting and Billing for Home Health Care Agency in Florida, USA.*
+*This package has been modified by Roberto Suarez, the company behind is B Consulting Group, an industry leading Consulting and Billing for Home Health Care Agency in Florida, USA.*
+
+*The original package is made publicly available by Senscio Systems, the company behind the Ibis Program, an industry leading healthcare initiative that helps people take control of their chronic condition management.
 
 ### Installation
 Binary installers for the latest released version are at the Python Package Index. Please note that you need to run Python 3.9 or higher to install the bc-edi-835-parser.
