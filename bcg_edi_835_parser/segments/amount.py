@@ -1,11 +1,14 @@
-from bcg_edi_835_parser.elements import identifier
+""" Amount (AMT) segment """
 from bcg_edi_835_parser.elements.identifier import Identifier
 from bcg_edi_835_parser.elements.dollars import Dollars
 from bcg_edi_835_parser.elements.amount_qualifier import AmountQualifier
 from bcg_edi_835_parser.segments.utilities import split_segment
 
+
 class Amount:
-    identification = 'AMT'
+    """Amount (AMT) segment Class"""
+
+    identification = "AMT"
 
     identifier = Identifier()
     qualifier = AmountQualifier()
@@ -20,8 +23,8 @@ class Amount:
         self.amount = segment[2]
 
     def __repr__(self) -> str:
-        return '\n'.join(str(item) for item in self.__dict__.items())
-    
-if __name__ == '__main__':
-    pass
+        return "\n".join(str(item) for item in self.__dict__.items())
 
+
+if __name__ == "__main__":
+    pass

@@ -1,12 +1,15 @@
-from bcg_edi_835_parser.elements import identifier
+""" Service Adjustment (CAS) """
 from bcg_edi_835_parser.elements.identifier import Identifier
 from bcg_edi_835_parser.elements.dollars import Dollars
 from bcg_edi_835_parser.elements.adjustment_group_code import AdjustmentGroupCode
 from bcg_edi_835_parser.elements.adjustment_reason_code import AdjustmentReasonCode
 from bcg_edi_835_parser.segments.utilities import split_segment
 
+
 class ServiceAdjustment:
-    identification = 'CAS'
+    """Service Adjustment (CAS) segment Class"""
+
+    identification = "CAS"
 
     identifier = Identifier()
     group_code = AdjustmentGroupCode()
@@ -23,11 +26,13 @@ class ServiceAdjustment:
         self.amount = segment[3]
 
     def __repr__(self):
-        return '\n'.join(str(item) for item in self.__dict__.items())
-    
-if __name__ == '__main__':
+        return "\n".join(str(item) for item in self.__dict__.items())
+
+
+# end Class ServiceAdjustment
+
+if __name__ == "__main__":
     pass
+# end if __name__ == '__main__'
 
-
-
-
+# end of file

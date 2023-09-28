@@ -1,14 +1,16 @@
-from bcg_edi_835_parser.elements import identifier
-from bcg_edi_835_parser.elements import entity_code
-from bcg_edi_835_parser.elements import identification_code_qualifier
+""" Entity (NM1) segment """
 from bcg_edi_835_parser.elements.identifier import Identifier
 from bcg_edi_835_parser.elements.entity_code import EntityCode
 from bcg_edi_835_parser.elements.entity_type import EntityType
-from bcg_edi_835_parser.elements.identification_code_qualifier import IdentificationCodeQualifier
+from bcg_edi_835_parser.elements.identification_code_qualifier import (
+    IdentificationCodeQualifier,
+)
 from bcg_edi_835_parser.segments.utilities import split_segment, get_element
 
 class Entity:
-    identification = 'NM1'
+    """Entity Class segment"""
+
+    identification = "NM1"
 
     identifier = Identifier()
     entity_code = EntityCode()
@@ -28,13 +30,18 @@ class Entity:
         self.identification_code = get_element(segment, 9)
 
     def __repr__(self) -> str:
-        return '\n'.join(str(item) for item in self.__dict__.items())
-    
+        return "\n".join(str(item) for item in self.__dict__.items())
+
     # This property has been changed from the original code.
     # Patient Name = Last Name, First Name in Uppercase
     @property
     def name(self) -> str:
-        return f'{self.last_name}, {self.first_name}'.upper()
-    
-if __name__ == '__main__':
+        """return the patient name"""
+        return f"{self.last_name}, {self.first_name}".upper()
+
+
+# End-of-Class (Entity)
+if __name__ == "__main__":
     pass
+
+# End-of-file (EOF)

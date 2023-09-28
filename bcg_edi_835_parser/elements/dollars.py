@@ -1,10 +1,11 @@
+""" Dollars """
 from typing import Optional
 
 from bcg_edi_835_parser.elements import Element
 
 class Dollars(Element):
-    """Dollars"""
-    
+    """ Dollars Class """
+
     def parser(self, value: str) -> Optional[float]:
-        if value != '':
+        if value != "":
             return float(value)

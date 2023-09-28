@@ -1,3 +1,4 @@
+"""Service Code"""
 from bcg_edi_835_parser.elements import Element
 from bcg_edi_835_parser.elements.utilities import split_element
 

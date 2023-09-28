@@ -1,12 +1,19 @@
-from enum import auto
-from bcg_edi_835_parser.elements.authorization_information_qualifier import AuthorizationInformationQualifier
+""" Interchange Segment """
+
+# Local Imports
+from bcg_edi_835_parser.elements.authorization_information_qualifier import (
+    AuthorizationInformationQualifier,
+)
 from bcg_edi_835_parser.elements.organization import Organization
 from bcg_edi_835_parser.elements.date import Date
 from bcg_edi_835_parser.elements.identifier import Identifier
 from bcg_edi_835_parser.segments.utilities import split_segment
 
+
 class Interchange:
-    identification = 'ISA'
+    # Iterchange Segment Class Definition
+    """Interchange Segment Class"""
+    identification = "ISA"
 
     identifier = Identifier()
     autorization_information_qualifier = AuthorizationInformationQualifier()
@@ -24,8 +31,9 @@ class Interchange:
         self.receiver = segment[8]
         self.transimission_date = segment[9] + segment[10]
 
-    def __repr__(self) -> str:      
-        return '\n'.join(str(item) for item in self.__dict__.items())
-    
-if __name__ == '__main__':
+    def __repr__(self) -> str:
+        return "\n".join(str(item) for item in self.__dict__.items())
+
+
+if __name__ == "__main__":
     pass

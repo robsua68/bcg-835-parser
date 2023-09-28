@@ -1,3 +1,4 @@
+""" Service segment """
 from bcg_edi_835_parser.elements.identifier import Identifier
 from bcg_edi_835_parser.elements.dollars import Dollars
 from bcg_edi_835_parser.elements.service_code import ServiceCode
@@ -6,8 +7,11 @@ from bcg_edi_835_parser.elements.service_modifier import ServiceModifier
 from bcg_edi_835_parser.elements.integer import Integer
 from bcg_edi_835_parser.segments.utilities import split_segment, get_element
 
+
 class Service:
-    identification = 'SVC'
+    """Service segment Class"""
+
+    identification = "SVC"
 
     identifier = Identifier()
     charge_amount = Dollars()
@@ -36,7 +40,13 @@ class Service:
         self.billed_units = get_element(segment, 7, default=self.allowed_units)
 
     def __repr__(self):
-        return '\n'.join(str(item) for item in self.__dict__.items())
-    
-if __name__ == '__main__':
-    pass        
+        return "\n".join(str(item) for item in self.__dict__.items())
+
+
+# end Class Service
+
+if __name__ == "__main__":
+    pass
+# end if __name__ == '__main__'
+
+# end of file
