@@ -1,6 +1,5 @@
-""" Setup file for bcg-edi-835-parser """
+""" Setup file for bcg-835-parser """
 import setuptools
-
 
 install_requires = ["pandas"]
 
@@ -9,14 +8,14 @@ install_requires = ["pandas"]
 # ]
 
 setuptools.setup(
-    name="bcg-edi-835-parser",
+    name="bcg-835-parser",
     version="1.7.0",
     author="Roberto Suarez",
     author_email="robsua68@hotmail.com",
     description="B Consulting Group EDI 835 file format parser.",
     long_description="B Consulting EDI 835 parser. Extending code from Keiron Stoddart",
     long_description_content_type="text/markdown",
-    url="https://github.com/robsua68/bcg-edi-835-parser",
+    url="https://github.com/robsua68/bcg-835-parser",
     packages=setuptools.find_packages(),
     classifiers=[
         "PROGRAMMING LANGUAGE :: PYTHON :: 3.11.5",
