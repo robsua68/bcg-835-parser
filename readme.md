@@ -14,7 +14,6 @@ Binary installers for the latest released version are at the Python Package Inde
 ```
 pip install bcg-edi-835-parser
 ```
-
 ### Usage
 To parse an EDI 835 file simply execute the `parse` function.
 ```python

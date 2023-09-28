@@ -1,5 +1,5 @@
 """ Date Element """
-from ctypes import Union
+from typing import Union
 from datetime import datetime
 from warnings import warn
 
@@ -8,7 +8,7 @@ from bcg_edi_835_parser.elements import Element
 class Date(Element):
     """Date Element Class"""
 
-    def parser(self, value: str) -> Union(datetime, str):
+    def parser(self, value: str) -> Union[datetime, str]:
         if len(value) == 10:
             year, month, day, minute, second = [
                 int(value[i : i + 2]) for i in range(0, len(value), 2)
