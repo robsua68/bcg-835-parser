@@ -1,4 +1,4 @@
-""" EDI 835 Parser """
+""" Bcg-Edi-835-Parser package """
 # Importing standard libraries
 import os
 from tkinter import E
@@ -7,8 +7,8 @@ from warnings import warn
 
 
 # Local imports
-from bcg_edi_835_parser.transaction_set.transaction_set import TransactionSet
-from bcg_edi_835_parser.transaction_set.transaction_sets import TransactionSets
+from Bcg_Edi_835_Parser.transaction_set.transaction_set import TransactionSet
+from Bcg_Edi_835_Parser.transaction_set.transaction_sets import TransactionSets
 
 def parse(path: str, debug: bool = False) -> TransactionSets:
     """Parse EDI 835 files from a directory or a single file path"""

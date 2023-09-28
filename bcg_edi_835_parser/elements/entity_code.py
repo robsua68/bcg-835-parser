@@ -1,5 +1,5 @@
 """ Entity Code """
-from bcg_edi_835_parser.elements import Element
+from Bcg_Edi_835_Parser.elements import Element
 
 # https://ediacademy.com/blog/x12-n101-entity-identifier-codes/
 entity_codes = {

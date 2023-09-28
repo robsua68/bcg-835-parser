@@ -1,13 +1,13 @@
 """ Interchange Segment """
 
 # Local Imports
-from bcg_edi_835_parser.elements.authorization_information_qualifier import (
+from Bcg_Edi_835_Parser.elements.authorization_information_qualifier import (
     AuthorizationInformationQualifier,
 )
-from bcg_edi_835_parser.elements.organization import Organization
-from bcg_edi_835_parser.elements.date import Date
-from bcg_edi_835_parser.elements.identifier import Identifier
-from bcg_edi_835_parser.segments.utilities import split_segment
+from Bcg_Edi_835_Parser.elements.organization import Organization
+from Bcg_Edi_835_Parser.elements.date import Date
+from Bcg_Edi_835_Parser.elements.identifier import Identifier
+from Bcg_Edi_835_Parser.segments.utilities import split_segment
 
 
 class Interchange:

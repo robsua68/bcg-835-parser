@@ -1,6 +1,6 @@
 """ Service Qualifier """
-from bcg_edi_835_parser.elements import Element
-from bcg_edi_835_parser.elements.utilities import split_element
+from Bcg_Edi_835_Parser.elements import Element
+from Bcg_Edi_835_Parser.elements.utilities import split_element
 
 
 class ServiceQualifier(Element):

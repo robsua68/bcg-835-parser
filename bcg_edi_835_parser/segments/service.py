@@ -1,11 +1,11 @@
 """ Service segment """
-from bcg_edi_835_parser.elements.identifier import Identifier
-from bcg_edi_835_parser.elements.dollars import Dollars
-from bcg_edi_835_parser.elements.service_code import ServiceCode
-from bcg_edi_835_parser.elements.service_qualifier import ServiceQualifier
-from bcg_edi_835_parser.elements.service_modifier import ServiceModifier
-from bcg_edi_835_parser.elements.integer import Integer
-from bcg_edi_835_parser.segments.utilities import split_segment, get_element
+from Bcg_Edi_835_Parser.elements.identifier import Identifier
+from Bcg_Edi_835_Parser.elements.dollars import Dollars
+from Bcg_Edi_835_Parser.elements.service_code import ServiceCode
+from Bcg_Edi_835_Parser.elements.service_qualifier import ServiceQualifier
+from Bcg_Edi_835_Parser.elements.service_modifier import ServiceModifier
+from Bcg_Edi_835_Parser.elements.integer import Integer
+from Bcg_Edi_835_Parser.segments.utilities import split_segment, get_element
 
 
 class Service:

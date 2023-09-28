@@ -19,11 +19,11 @@ setuptools.setup(
     url="https://github.com/robsua68/bcg-edi-835-parser",
     packages=setuptools.find_packages(),
     classifiers=[
-        "PROGRAMMING LANGUAGE :: PYTHON :: 3",
+        "PROGRAMMING LANGUAGE :: PYTHON :: 3.11.5",
         "LICENSE :: OSI APPROVED :: MIT LICENSE",
         "OPERATING SYSTEM :: OS INDEPENDENT",
     ],
     install_requires=install_requires,
     # tests_require=tests_require,
-    python_requires=">=3.11",
+    python_requires=">=3.11.5",
 )

@@ -3,11 +3,11 @@
 from typing import Iterator, Tuple, Optional
 
 # Local application imports
-from bcg_edi_835_parser.segments.organization import Organization as OrganizationSegment
-from bcg_edi_835_parser.segments.claim import Claim as ClaimSegment
-from bcg_edi_835_parser.segments.address import Address as AddressSegment
-from bcg_edi_835_parser.segments.location import Location as LocationSegment
-from bcg_edi_835_parser.segments.utilities import find_identifier
+from Bcg_Edi_835_Parser.segments.organization import Organization as OrganizationSegment
+from Bcg_Edi_835_Parser.segments.claim import Claim as ClaimSegment
+from Bcg_Edi_835_Parser.segments.address import Address as AddressSegment
+from Bcg_Edi_835_Parser.segments.location import Location as LocationSegment
+from Bcg_Edi_835_Parser.segments.utilities import find_identifier
 
 
 class Organization:

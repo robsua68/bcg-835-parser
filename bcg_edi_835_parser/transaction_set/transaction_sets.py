@@ -7,7 +7,7 @@ from typing import List, Iterable
 import pandas as pd
 
 # Local application imports
-from bcg_edi_835_parser.transaction_set.transaction_set import TransactionSet
+from Bcg_Edi_835_Parser.transaction_set.transaction_set import TransactionSet
 
 class TransactionSets:
     """A collection of TransactionSet objects."""

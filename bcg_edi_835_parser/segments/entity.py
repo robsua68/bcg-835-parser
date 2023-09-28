@@ -1,11 +1,13 @@
 """ Entity (NM1) segment """
-from bcg_edi_835_parser.elements.identifier import Identifier
-from bcg_edi_835_parser.elements.entity_code import EntityCode
-from bcg_edi_835_parser.elements.entity_type import EntityType
-from bcg_edi_835_parser.elements.identification_code_qualifier import (
+
+# Local imports
+from Bcg_Edi_835_Parser.elements.identifier import Identifier
+from Bcg_Edi_835_Parser.elements.entity_code import EntityCode
+from Bcg_Edi_835_Parser.elements.entity_type import EntityType
+from Bcg_Edi_835_Parser.elements.identification_code_qualifier import (
     IdentificationCodeQualifier,
 )
-from bcg_edi_835_parser.segments.utilities import split_segment, get_element
+from Bcg_Edi_835_Parser.segments.utilities import split_segment, get_element
 
 class Entity:
     """Entity Class segment"""

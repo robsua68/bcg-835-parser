@@ -8,12 +8,12 @@ from collections import namedtuple
 import pandas as pd
 
 # Local application imports
-from bcg_edi_835_parser.loops.claim import Claim as ClaimLoop
-from bcg_edi_835_parser.loops.service import Service as ServiceLoop
-from bcg_edi_835_parser.loops.organization import Organization as OrganizationLoop
-from bcg_edi_835_parser.segments.utilities import find_identifier
-from bcg_edi_835_parser.segments.interchange import Interchange as InterchangeSegment
-from bcg_edi_835_parser.segments.financial_information import (
+from Bcg_Edi_835_Parser.loops.claim import Claim as ClaimLoop
+from Bcg_Edi_835_Parser.loops.service import Service as ServiceLoop
+from Bcg_Edi_835_Parser.loops.organization import Organization as OrganizationLoop
+from Bcg_Edi_835_Parser.segments.utilities import find_identifier
+from Bcg_Edi_835_Parser.segments.interchange import Interchange as InterchangeSegment
+from Bcg_Edi_835_Parser.segments.financial_information import (
     FinancialInformation as FinancialInformationSegment,
 )
 

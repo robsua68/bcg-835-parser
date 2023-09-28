@@ -1,7 +1,7 @@
 """ Integer Element """
 from typing import Optional, Union
 
-from bcg_edi_835_parser.elements import Element
+from Bcg_Edi_835_Parser.elements import Element
 
 
 class Integer(Element):

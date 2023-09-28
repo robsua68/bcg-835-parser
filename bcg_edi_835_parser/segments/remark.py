@@ -1,8 +1,8 @@
 """ Remark (LQ) segment """
-from bcg_edi_835_parser.elements.identifier import Identifier
-from bcg_edi_835_parser.elements.remark_qualifier import RemarkQualifier
-from bcg_edi_835_parser.elements.remark_code import RemarkCode
-from bcg_edi_835_parser.segments.utilities import split_segment
+from Bcg_Edi_835_Parser.elements.identifier import Identifier
+from Bcg_Edi_835_Parser.elements.remark_qualifier import RemarkQualifier
+from Bcg_Edi_835_Parser.elements.remark_code import RemarkCode
+from Bcg_Edi_835_Parser.segments.utilities import split_segment
 
 
 class Remark:

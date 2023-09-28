@@ -1,5 +1,5 @@
 """ Reference Qualifier """
-from bcg_edi_835_parser.elements import Element, Code
+from Bcg_Edi_835_Parser.elements import Element, Code
 
 # https://ushik.ahrq.gov/ViewItemDetails?&system=sdo&itemKey=133213000
 reference_qualifiers = {

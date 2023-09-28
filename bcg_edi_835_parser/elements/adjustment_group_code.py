@@ -1,5 +1,5 @@
 """ Adjustment Group Code """
-from bcg_edi_835_parser.elements import Element, Code
+from Bcg_Edi_835_Parser.elements import Element, Code
 
 # https://x12.org/codes/claim-adjustment-group-codes
 adjustment_group_codes = {

@@ -1,5 +1,5 @@
 """ Remark Qualifier """
-from bcg_edi_835_parser.elements import Element, Code
+from Bcg_Edi_835_Parser.elements import Element, Code
 
 remark_qualifiers = {"HE": "claim payment"}
 

@@ -4,13 +4,13 @@ from typing import Iterator, Tuple, Optional, List
 from warnings import warn
 
 # Local application imports
-from bcg_edi_835_parser.segments.claim import Claim as ClaimSegment
-from bcg_edi_835_parser.segments.entity import Entity as EntitySegment
-from bcg_edi_835_parser.segments.reference import Reference as ReferenceSegment
-from bcg_edi_835_parser.segments.date import Date as DateSegment
-from bcg_edi_835_parser.segments.amount import Amount as AmountSegment
-from bcg_edi_835_parser.segments.utilities import find_identifier
-from bcg_edi_835_parser.loops.service import Service as ServiceLoop
+from Bcg_Edi_835_Parser.segments.claim import Claim as ClaimSegment
+from Bcg_Edi_835_Parser.segments.entity import Entity as EntitySegment
+from Bcg_Edi_835_Parser.segments.reference import Reference as ReferenceSegment
+from Bcg_Edi_835_Parser.segments.date import Date as DateSegment
+from Bcg_Edi_835_Parser.segments.amount import Amount as AmountSegment
+from Bcg_Edi_835_Parser.segments.utilities import find_identifier
+from Bcg_Edi_835_Parser.loops.service import Service as ServiceLoop
 
 
 class Claim:

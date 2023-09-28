@@ -1,5 +1,5 @@
 """ Amount Qualifier """
-from bcg_edi_835_parser.elements import Element
+from Bcg_Edi_835_Parser.elements import Element
 
 # https://ushik.ahrq.gov/ViewItemDetails?system=mdr&itemKey=133081000
 amount_qualifiers = {"B6": "allowed - actual", "AU": "coverage amount"}

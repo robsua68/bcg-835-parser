@@ -1,7 +1,7 @@
 """ Reference (REF) segment """
-from bcg_edi_835_parser.elements.identifier import Identifier
-from bcg_edi_835_parser.elements.reference_qualifier import ReferenceQualifier
-from bcg_edi_835_parser.segments.utilities import split_segment
+from Bcg_Edi_835_Parser.elements.identifier import Identifier
+from Bcg_Edi_835_Parser.elements.reference_qualifier import ReferenceQualifier
+from Bcg_Edi_835_Parser.segments.utilities import split_segment
 
 
 class Reference:

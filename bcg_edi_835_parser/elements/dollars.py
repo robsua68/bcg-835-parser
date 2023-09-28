@@ -1,7 +1,7 @@
 """ Dollars """
 from typing import Optional
 
-from bcg_edi_835_parser.elements import Element
+from Bcg_Edi_835_Parser.elements import Element
 
 class Dollars(Element):
     """ Dollars Class """

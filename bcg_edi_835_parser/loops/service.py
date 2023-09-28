@@ -4,17 +4,17 @@ from typing import Tuple, Iterator, Optional, List
 from warnings import warn
 
 # Local application imports
-from bcg_edi_835_parser.segments.service import Service as ServiceSegment
-from bcg_edi_835_parser.segments.claim import Claim as ClaimSegment
-from bcg_edi_835_parser.segments.date import Date as DateSegment
-from bcg_edi_835_parser.segments.reference import Reference as ReferenceSegment
-from bcg_edi_835_parser.segments.amount import Amount as AmountSegment
-from bcg_edi_835_parser.segments.service_adjustment import (
+from Bcg_Edi_835_Parser.segments.service import Service as ServiceSegment
+from Bcg_Edi_835_Parser.segments.claim import Claim as ClaimSegment
+from Bcg_Edi_835_Parser.segments.date import Date as DateSegment
+from Bcg_Edi_835_Parser.segments.reference import Reference as ReferenceSegment
+from Bcg_Edi_835_Parser.segments.amount import Amount as AmountSegment
+from Bcg_Edi_835_Parser.segments.service_adjustment import (
     ServiceAdjustment as ServiceAdjustmentSegment,
 )
-from bcg_edi_835_parser.segments.remark import Remark as RemarkSegment
-from bcg_edi_835_parser.segments.utilities import find_identifier
-from bcg_edi_835_parser.elements.dollars import Dollars
+from Bcg_Edi_835_Parser.segments.remark import Remark as RemarkSegment
+from Bcg_Edi_835_Parser.segments.utilities import find_identifier
+from Bcg_Edi_835_Parser.elements.dollars import Dollars
 
 
 class Service:

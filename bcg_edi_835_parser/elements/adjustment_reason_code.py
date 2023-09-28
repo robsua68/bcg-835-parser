@@ -1,5 +1,5 @@
 """ Adjustment Reason Code (2110C NM109) """
-from bcg_edi_835_parser.elements import Element, Code
+from Bcg_Edi_835_Parser.elements import Element, Code
 
 # https://x12.org/codes/claim-adjustment-reason-codes
 

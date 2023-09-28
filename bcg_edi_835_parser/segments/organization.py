@@ -1,7 +1,7 @@
 """ Organization segment """
-from bcg_edi_835_parser.elements.identifier import Identifier
-from bcg_edi_835_parser.elements.organization_type import OrganizationType
-from bcg_edi_835_parser.segments.utilities import split_segment
+from Bcg_Edi_835_Parser.elements.identifier import Identifier
+from Bcg_Edi_835_Parser.elements.organization_type import OrganizationType
+from Bcg_Edi_835_Parser.segments.utilities import split_segment
 
 
 class Organization:

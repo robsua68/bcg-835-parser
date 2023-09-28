@@ -1,10 +1,10 @@
 """ Financial Information segment """
-from bcg_edi_835_parser.elements.identifier import Identifier
-from bcg_edi_835_parser.elements.payment_method import PaymentMethod
-from bcg_edi_835_parser.elements.dollars import Dollars
-from bcg_edi_835_parser.elements.integer import Integer
-from bcg_edi_835_parser.elements.date import Date
-from bcg_edi_835_parser.segments.utilities import split_segment
+from Bcg_Edi_835_Parser.elements.identifier import Identifier
+from Bcg_Edi_835_Parser.elements.payment_method import PaymentMethod
+from Bcg_Edi_835_Parser.elements.dollars import Dollars
+from Bcg_Edi_835_Parser.elements.integer import Integer
+from Bcg_Edi_835_Parser.elements.date import Date
+from Bcg_Edi_835_Parser.segments.utilities import split_segment
 
 
 class FinancialInformation:

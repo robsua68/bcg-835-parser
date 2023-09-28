@@ -1,5 +1,5 @@
 """ Entity Type """
-from bcg_edi_835_parser.elements import Element
+from Bcg_Edi_835_Parser.elements import Element
 
 # https://magnacare.com/wp-content/uploads/pdf/MagnacareCompanionGuide_835_5010A1.pdf
 entity_types = {

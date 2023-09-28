@@ -1,8 +1,8 @@
 """ Amount (AMT) segment """
-from bcg_edi_835_parser.elements.identifier import Identifier
-from bcg_edi_835_parser.elements.dollars import Dollars
-from bcg_edi_835_parser.elements.amount_qualifier import AmountQualifier
-from bcg_edi_835_parser.segments.utilities import split_segment
+from Bcg_Edi_835_Parser.elements.identifier import Identifier
+from Bcg_Edi_835_Parser.elements.dollars import Dollars
+from Bcg_Edi_835_Parser.elements.amount_qualifier import AmountQualifier
+from Bcg_Edi_835_Parser.segments.utilities import split_segment
 
 
 class Amount:

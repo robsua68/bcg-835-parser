@@ -1,5 +1,5 @@
 """ Payment Method (BPR04) """
-from bcg_edi_835_parser.elements import Element
+from Bcg_Edi_835_Parser.elements import Element
 
 payment_methods = {"ACH": "automatic deposit", "CHK": "check", "NON": "no payment"}
 
