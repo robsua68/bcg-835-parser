@@ -1,6 +1,6 @@
 """Service Code"""
-from Rsa_835_Parser.elements import Element
-from Rsa_835_Parser.elements.utilities import split_element
+from rsa_835_parser.elements import Element
+from rsa_835_parser.elements.utilities import split_element
 
 class ServiceCode(Element):
     """Service Code"""

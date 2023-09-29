@@ -1,5 +1,5 @@
 """ Amount Qualifier """
-from Rsa_835_Parser.elements import Element
+from rsa_835_parser.elements import Element
 
 # https://ushik.ahrq.gov/ViewItemDetails?system=mdr&itemKey=133081000
 amount_qualifiers = {"B6": "allowed - actual", "AU": "coverage amount"}

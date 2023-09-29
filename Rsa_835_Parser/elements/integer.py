@@ -1,7 +1,7 @@
 """ Integer Element """
 from typing import Optional, Union
 
-from Rsa_835_Parser.elements import Element
+from rsa_835_parser.elements import Element
 
 
 class Integer(Element):

@@ -3,11 +3,11 @@
 from typing import Iterator, Tuple, Optional
 
 # Local application imports
-from Rsa_835_Parser.segments.organization import Organization as OrganizationSegment
-from Rsa_835_Parser.segments.claim import Claim as ClaimSegment
-from Rsa_835_Parser.segments.address import Address as AddressSegment
-from Rsa_835_Parser.segments.location import Location as LocationSegment
-from Rsa_835_Parser.segments.utilities import find_identifier
+from rsa_835_parser.segments.organization import Organization as OrganizationSegment
+from rsa_835_parser.segments.claim import Claim as ClaimSegment
+from rsa_835_parser.segments.address import Address as AddressSegment
+from rsa_835_parser.segments.location import Location as LocationSegment
+from rsa_835_parser.segments.utilities import find_identifier
 
 
 class Organization:

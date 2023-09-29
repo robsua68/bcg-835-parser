@@ -1,5 +1,5 @@
 """	Remark Code (RMR) - 4 characters """
-from Rsa_835_Parser.elements import Element, Code
+from rsa_835_parser.elements import Element, Code
 
 # https://x12.org/codes/remittance-advice-remark-codes
 remark_codes = {

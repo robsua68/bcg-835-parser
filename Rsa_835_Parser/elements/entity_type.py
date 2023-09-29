@@ -1,5 +1,5 @@
 """ Entity Type """
-from Rsa_835_Parser.elements import Element
+from rsa_835_parser.elements import Element
 
 # https://magnacare.com/wp-content/uploads/pdf/MagnacareCompanionGuide_835_5010A1.pdf
 entity_types = {

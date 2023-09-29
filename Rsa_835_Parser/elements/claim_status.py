@@ -1,5 +1,5 @@
 """ Claim Status """
-from Rsa_835_Parser.elements import Element
+from rsa_835_parser.elements import Element
 
 class ClaimStatus(Element):
     """Claim Status"""

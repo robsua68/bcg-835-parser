@@ -1,5 +1,5 @@
 """ Organization Element """
-from Rsa_835_Parser.elements import Element
+from rsa_835_parser.elements import Element
 
 organizations = {"AV09311993": "Availity", "ZIRMED": "Zirmed"}
 

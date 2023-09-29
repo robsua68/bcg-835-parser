@@ -7,7 +7,7 @@ from typing import List, Iterable
 import pandas as pd
 
 # Local application imports
-from Rsa_835_Parser.transaction_set.transaction_set import TransactionSet
+from rsa_835_parser.transaction_set.transaction_set import TransactionSet
 
 class TransactionSets:
     """A collection of TransactionSet objects."""

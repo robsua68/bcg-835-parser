@@ -8,12 +8,12 @@ from collections import namedtuple
 import pandas as pd
 
 # Local application imports
-from Rsa_835_Parser.loops.claim import Claim as ClaimLoop
-from Rsa_835_Parser.loops.service import Service as ServiceLoop
-from Rsa_835_Parser.loops.organization import Organization as OrganizationLoop
-from Rsa_835_Parser.segments.utilities import find_identifier
-from Rsa_835_Parser.segments.interchange import Interchange as InterchangeSegment
-from Rsa_835_Parser.segments.financial_information import (
+from rsa_835_parser.loops.claim import Claim as ClaimLoop
+from rsa_835_parser.loops.service import Service as ServiceLoop
+from rsa_835_parser.loops.organization import Organization as OrganizationLoop
+from rsa_835_parser.segments.utilities import find_identifier
+from rsa_835_parser.segments.interchange import Interchange as InterchangeSegment
+from rsa_835_parser.segments.financial_information import (
     FinancialInformation as FinancialInformationSegment,
 )
 

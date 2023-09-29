@@ -1,5 +1,5 @@
 """ Payment Method (BPR04) """
-from Rsa_835_Parser.elements import Element
+from rsa_835_parser.elements import Element
 
 payment_methods = {"ACH": "automatic deposit", "CHK": "check", "NON": "no payment"}
 

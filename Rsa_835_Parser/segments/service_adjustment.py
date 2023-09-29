@@ -1,9 +1,9 @@
 """ Service Adjustment (CAS) """
-from Rsa_835_Parser.elements.identifier import Identifier
-from Rsa_835_Parser.elements.dollars import Dollars
-from Rsa_835_Parser.elements.adjustment_group_code import AdjustmentGroupCode
-from Rsa_835_Parser.elements.adjustment_reason_code import AdjustmentReasonCode
-from Rsa_835_Parser.segments.utilities import split_segment
+from rsa_835_parser.elements.identifier import Identifier
+from rsa_835_parser.elements.dollars import Dollars
+from rsa_835_parser.elements.adjustment_group_code import AdjustmentGroupCode
+from rsa_835_parser.elements.adjustment_reason_code import AdjustmentReasonCode
+from rsa_835_parser.segments.utilities import split_segment
 
 
 class ServiceAdjustment:

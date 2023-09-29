@@ -1,7 +1,7 @@
 """ Identifier element """
 from typing import Optional
 
-from Rsa_835_Parser.elements import Element
+from rsa_835_parser.elements import Element
 
 class Identifier(Element):
     """Identifier Class"""

@@ -1,5 +1,5 @@
 """	Identification Code Qualifier """
-from Rsa_835_Parser.elements import Element
+from rsa_835_parser.elements import Element
 
 # https://ushik.ahrq.gov/dr.ui.drValueDomain_View?system=mdr&ValueDomainID=4933000&CallingRoutine=$CallingRoutine$&OrganizationID=3&RecordOffset=11&Referer=ValueDomain
 identification_code_qualifiers = {

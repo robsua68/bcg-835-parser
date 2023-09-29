@@ -1,13 +1,13 @@
 """ Entity (NM1) segment """
 
 # Local imports
-from Rsa_835_Parser.elements.identifier import Identifier
-from Rsa_835_Parser.elements.entity_code import EntityCode
-from Rsa_835_Parser.elements.entity_type import EntityType
-from Rsa_835_Parser.elements.identification_code_qualifier import (
+from rsa_835_parser.elements.identifier import Identifier
+from rsa_835_parser.elements.entity_code import EntityCode
+from rsa_835_parser.elements.entity_type import EntityType
+from rsa_835_parser.elements.identification_code_qualifier import (
     IdentificationCodeQualifier,
 )
-from Rsa_835_Parser.segments.utilities import split_segment, get_element
+from rsa_835_parser.segments.utilities import split_segment, get_element
 
 class Entity:
     """Entity Class segment"""

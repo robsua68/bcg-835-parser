@@ -1,8 +1,8 @@
 """ Amount (AMT) segment """
-from Rsa_835_Parser.elements.identifier import Identifier
-from Rsa_835_Parser.elements.dollars import Dollars
-from Rsa_835_Parser.elements.amount_qualifier import AmountQualifier
-from Rsa_835_Parser.segments.utilities import split_segment
+from rsa_835_parser.elements.identifier import Identifier
+from rsa_835_parser.elements.dollars import Dollars
+from rsa_835_parser.elements.amount_qualifier import AmountQualifier
+from rsa_835_parser.segments.utilities import split_segment
 
 
 class Amount:

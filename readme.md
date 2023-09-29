@@ -17,7 +17,7 @@ pip install rsa-835-parser
 ### Usage
 To parse an EDI 835 file simply execute the `parse` function.
 ```python
-from Rsa_835_parser import parse
+from rsa_835_parser import parse
 
 path = '~/Desktop/my_edi_file.txt'
 transaction_set = parse(path)
@@ -25,7 +25,7 @@ transaction_set = parse(path)
 
 The `parse` function also works on a directory path.
 ```python
-from Rsa_835_parser import parse
+from rsa_835_parser import parse
 
 path = '~/Desktop/my_directory_of_edi_files'
 transaction_sets = parse(path)
@@ -35,7 +35,7 @@ In both cases, `parse` returns an instance of the `TransactionSets` class.
 This is the class you manipulate depending on your needs. 
 For example, say you want to work with the transaction sets data as a `pd.DataFrame`.
 ```python
-from Rsa_835_parser import parse
+from rsa_835_parser import parse
 
 path = '~/Desktop/my_directory_of_edi_files'
 transaction_sets = parse(path)

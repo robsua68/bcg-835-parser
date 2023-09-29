@@ -1,5 +1,5 @@
 """ Remark Qualifier """
-from Rsa_835_Parser.elements import Element, Code
+from rsa_835_parser.elements import Element, Code
 
 remark_qualifiers = {"HE": "claim payment"}
 

@@ -1,11 +1,11 @@
 """ Service segment """
-from Rsa_835_Parser.elements.identifier import Identifier
-from Rsa_835_Parser.elements.dollars import Dollars
-from Rsa_835_Parser.elements.service_code import ServiceCode
-from Rsa_835_Parser.elements.service_qualifier import ServiceQualifier
-from Rsa_835_Parser.elements.service_modifier import ServiceModifier
-from Rsa_835_Parser.elements.integer import Integer
-from Rsa_835_Parser.segments.utilities import split_segment, get_element
+from rsa_835_parser.elements.identifier import Identifier
+from rsa_835_parser.elements.dollars import Dollars
+from rsa_835_parser.elements.service_code import ServiceCode
+from rsa_835_parser.elements.service_qualifier import ServiceQualifier
+from rsa_835_parser.elements.service_modifier import ServiceModifier
+from rsa_835_parser.elements.integer import Integer
+from rsa_835_parser.segments.utilities import split_segment, get_element
 
 
 class Service:

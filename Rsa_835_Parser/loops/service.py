@@ -4,17 +4,17 @@ from typing import Tuple, Iterator, Optional, List
 from warnings import warn
 
 # Local application imports
-from Rsa_835_Parser.segments.service import Service as ServiceSegment
-from Rsa_835_Parser.segments.claim import Claim as ClaimSegment
-from Rsa_835_Parser.segments.date import Date as DateSegment
-from Rsa_835_Parser.segments.reference import Reference as ReferenceSegment
-from Rsa_835_Parser.segments.amount import Amount as AmountSegment
-from Rsa_835_Parser.segments.service_adjustment import (
+from rsa_835_parser.segments.service import Service as ServiceSegment
+from rsa_835_parser.segments.claim import Claim as ClaimSegment
+from rsa_835_parser.segments.date import Date as DateSegment
+from rsa_835_parser.segments.reference import Reference as ReferenceSegment
+from rsa_835_parser.segments.amount import Amount as AmountSegment
+from rsa_835_parser.segments.service_adjustment import (
     ServiceAdjustment as ServiceAdjustmentSegment,
 )
-from Rsa_835_Parser.segments.remark import Remark as RemarkSegment
-from Rsa_835_Parser.segments.utilities import find_identifier
-from Rsa_835_Parser.elements.dollars import Dollars
+from rsa_835_parser.segments.remark import Remark as RemarkSegment
+from rsa_835_parser.segments.utilities import find_identifier
+from rsa_835_parser.elements.dollars import Dollars
 
 
 class Service:

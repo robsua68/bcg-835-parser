@@ -3,7 +3,7 @@ from typing import Union
 from datetime import datetime
 from warnings import warn
 
-from Rsa_835_Parser.elements import Element
+from rsa_835_parser.elements import Element
 
 class Date(Element):
     """Date Element Class"""

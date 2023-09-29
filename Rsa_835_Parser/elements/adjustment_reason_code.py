@@ -1,5 +1,5 @@
 """ Adjustment Reason Code (2110C NM109) """
-from Rsa_835_Parser.elements import Element, Code
+from rsa_835_parser.elements import Element, Code
 
 # https://x12.org/codes/claim-adjustment-reason-codes
 

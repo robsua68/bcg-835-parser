@@ -1,5 +1,5 @@
 """ Reference Qualifier """
-from Rsa_835_Parser.elements import Element, Code
+from rsa_835_parser.elements import Element, Code
 
 # https://ushik.ahrq.gov/ViewItemDetails?&system=sdo&itemKey=133213000
 reference_qualifiers = {
