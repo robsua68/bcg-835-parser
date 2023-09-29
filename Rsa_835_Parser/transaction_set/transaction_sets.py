@@ -9,6 +9,7 @@ import pandas as pd
 # Local application imports
 from rsa_835_parser.transaction_set.transaction_set import TransactionSet
 
+
 class TransactionSets:
     """A collection of TransactionSet objects."""
 
@@ -25,17 +26,17 @@ class TransactionSets:
         return "\n".join(str(transaction_set) for transaction_set in self)
 
     def to_dataframe(self) -> pd.DataFrame:
-        """Convert the TransactionSets to a pandas DataFrame."""
+        """flatten the remittance advice by service to a pandas DataFrame"""
         data = pd.DataFrame()
         for transaction_set in self:
             data = pd.concat([data, transaction_set.to_dataframe()])
 
-        data = TransactionSets.sort_columns(data)
-        return data
+            data = TransactionSets.sort_columns(data)
+            return data
 
     @staticmethod
     def sort_columns(data: pd.DataFrame) -> pd.DataFrame:
-        """Sort the columns of the DataFrame."""
+        """Sort columns in a pandas DataFrame."""
         substrings = ["adj", "ref", "rem"]
         variable_columns = [
             c for c in data.columns if any(sub_string in c for sub_string in substrings)
@@ -48,7 +49,7 @@ class TransactionSets:
         return data
 
     def sum_payments(self) -> float:
-        """Sum the payments in the TransactionSets."""
+        """Sum the total amount paid in the remittance advice."""
         amount = 0
         for transaction_set in self:
             amount += transaction_set.financial_information.amount_paid
@@ -56,7 +57,7 @@ class TransactionSets:
         return amount
 
     def count_claims(self) -> int:
-        """Count the claims in the TransactionSets."""
+        """Count the number of claims in the remittance advice."""
         count = 0
         for transaction_set in self:
             count += len(transaction_set.claims)
@@ -64,7 +65,7 @@ class TransactionSets:
         return count
 
     def count_patients(self) -> int:
-        """Count the patients in the TransactionSets."""
+        """Count the number of patients in the remittance advice."""
         patients = []
         for transaction_set in self:
             for claim in transaction_set.claims:

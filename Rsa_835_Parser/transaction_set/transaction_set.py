@@ -21,19 +21,23 @@ BuildAttributeResponse = namedtuple(
     "BuildAttributeResponse", "key value segment segments"
 )
 
+
 class TransactionSet:
-    """ TransactionSet class for parsing EDI 835 remittance advices """
+    """TransactionSet class for parsing EDI 835 remittance advices"""
+
     def __init__(
         self,
         interchange: InterchangeSegment = None,
         financial_information: FinancialInformationSegment = None,
         claims: List[ClaimLoop] = None,
         organizations: List[OrganizationLoop] = None,
+        file_path: str = None,
     ):
         self.interchange = interchange
         self.financial_information = financial_information
         self.claims = claims if claims else []
         self.organizations = organizations if organizations else []
+        self.file_path = file_path
 
     def __repr__(self):
         return "\n".join(str(item) for item in self.__dict__.items())
@@ -45,10 +49,17 @@ class TransactionSet:
         assert len(payer) == 1
         return payer[0]
 
+    @property
+    def payee(self) -> OrganizationLoop:
+        """return the payee organization"""
+        payee = [o for o in self.organizations if o.organization.type == "payee"]
+        assert len(payee) == 1
+        return payee[0]
+
     def to_dataframe(self) -> pd.DataFrame:
         """flatten the remittance advice by service to a pandas DataFrame"""
-
         data = []
+
         for claim in self.claims:
             for service in claim.services:
                 datum = TransactionSet.serialize_service(
@@ -70,7 +81,7 @@ class TransactionSet:
 
                 data.append(datum)
 
-                return pd.DataFrame(data)
+        return pd.DataFrame(data)
 
     @staticmethod
     def serialize_service(
@@ -94,22 +105,25 @@ class TransactionSet:
         elif claim.claim_statement_period_end:
             end_date = claim.claim_statement_period_end.date
 
-        # Adding Claim Number in the output
         datum = {
             "marker": claim.claim.marker,
             "patient": claim.patient.name,
             "code": service.service.code,
             "modifier": service.service.modifier,
+            "qualifier": service.service.qualifier,
             "allowed_units": service.service.allowed_units,
             "billed_units": service.service.billed_units,
             "transaction_date": financial_information.transaction_date,
-            "charged_amount": claim.claim.charge_amount,
-            "allowed_amount": service.amount.amount,
-            "paid_amount": claim.claim.paid_amount,
+            "charge_amount": service.service.charge_amount,
+            "allowed_amount": service.allowed_amount,
+            "paid_amount": service.service.paid_amount,
             "payer": payer.organization.name,
             "start_date": start_date,
             "end_date": end_date,
-            "rendering_provider": claim.rendering_provider.name,
+            "rendering_provider": claim.rendering_provider.name
+            if claim.rendering_provider
+            else None,
+            "payer_classification": str(claim.claim.status.payer_classification),
             "claim_number": claim.claim.claim_number,
         }
 
@@ -118,14 +132,13 @@ class TransactionSet:
     @classmethod
     def build(cls, file_path: str) -> "TransactionSet":
         """build a TransactionSet from a file path"""
-
         interchange = None
         financial_information = None
         claims = []
         organizations = []
 
-        with open(file_path, "r", encoding="utf-8") as file:
-            return file.read()
+        with open(file_path, encoding="utf-8") as file:
+            file = file.read()
 
         segments = file.split("~")
         segments = [segment.strip() for segment in segments]
@@ -145,7 +158,7 @@ class TransactionSet:
             if response.key == "interchange":
                 interchange = response.value
 
-            if response.key == "financial_information":
+            if response.key == "financial information":
                 financial_information = response.value
 
             if response.key == "organization":
@@ -154,17 +167,18 @@ class TransactionSet:
             if response.key == "claim":
                 claims.append(response.value)
 
-        return TransactionSet(interchange, financial_information, claims, organizations)
+        return TransactionSet(
+            interchange, financial_information, claims, organizations, file_path
+        )
 
     @classmethod
     def build_attribute(
         cls, segment: Optional[str], segments: Iterator[str]
     ) -> BuildAttributeResponse:
-        """build an attribute from a segment and an iterator of segments"""
-
+        """build an attribute from a segment and segments iterator"""
         if segment is None:
             try:
-                segment = next(segments)
+                segment = segments.__next__()
             except StopIteration:
                 return BuildAttributeResponse(None, None, None, None)
 
@@ -177,7 +191,7 @@ class TransactionSet:
         if identifier == FinancialInformationSegment.identification:
             financial_information = FinancialInformationSegment(segment)
             return BuildAttributeResponse(
-                "financial_information", financial_information, None, segments
+                "financial information", financial_information, None, segments
             )
 
         if identifier == OrganizationLoop.initiating_identifier:
@@ -186,7 +200,7 @@ class TransactionSet:
                 "organization", organization, segment, segments
             )
 
-        if identifier == ClaimLoop.initiating_identifier:
+        elif identifier == ClaimLoop.initiating_identifier:
             claim, segments, segment = ClaimLoop.build(segment, segments)
             return BuildAttributeResponse("claim", claim, segment, segments)
 

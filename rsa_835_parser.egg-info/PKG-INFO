@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: rsa-835-parser
-Version: 1.10.0
+Version: 1.14.0
 Summary: B Consulting Group EDI 835 file format parser.
 Home-page: https://github.com/robsua68/bcg-835-parser
 Author: Roberto Suarez

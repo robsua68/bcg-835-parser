@@ -1,7 +1,7 @@
 """ Setup file for rsa-835-parser """
 from setuptools import setup, find_packages
 
-VERSION = "1.11.0"
+VERSION = "1.14.0"
 DESCRIPTION = "B Consulting Group EDI 835 file format parser."
 LONG_DESCRIPTION = (
     "B Consulting EDI 835 file format parser, extending the Keiron Stoddart version."
@@ -9,9 +9,9 @@ LONG_DESCRIPTION = (
 
 install_requires = ["pandas"]
 
-# tests_require = [
-#     'pytest'
-# ]
+tests_require = [
+     'pytest'
+]
 
 setup(
     name="rsa-835-parser",
@@ -27,6 +27,6 @@ setup(
     classifiers=[
         "Development Status :: 3 - Alpha",
     ],
-    # tests_require=tests_require,
+    tests_require=tests_require,
     python_requires=">=3.11.5",
 )
