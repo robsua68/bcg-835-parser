@@ -1,8 +1,11 @@
-""" Setup file for bcg-835-parser """
-import setuptools
+""" Setup file for rsa-835-parser """
+from setuptools import setup, find_packages
 
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
+VERSION = "1.9.0"
+DESCRIPTION = "B Consulting Group EDI 835 file format parser."
+LONG_DESCRIPTION = (
+    "B Consulting EDI 835 file format parser, extending the Keiron Stoddart version."
+)
 
 install_requires = ["pandas"]
 
@@ -10,22 +13,20 @@ install_requires = ["pandas"]
 #     'pytest'
 # ]
 
-setuptools.setup(
-    name="bcg-835-parser",
-    version="1.8.0",
+setup(
+    name="rsa-835-parser",
+    version=VERSION,
     author="Roberto Suarez",
-    author_email="robsua68@hotmail.com",
-    description="B Consulting Group EDI 835 file format parser.",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
-    url="https://github.com/robsua68/bcg-835-parser",
-    packages=setuptools.find_packages(),
-    classifiers=[
-        "PROGRAMMING LANGUAGE :: PYTHON :: 3.9",
-        "LICENSE :: OSI APPROVED :: MIT LICENSE",
-        "OPERATING SYSTEM :: OS INDEPENDENT",
-    ],
+    author_email="<robsua68@hotmail.com>",
+    description=DESCRIPTION,
+    long_description=LONG_DESCRIPTION,
+    packages=find_packages(),
     install_requires=install_requires,
+    url="https://github.com/robsua68/bcg-835-parser",
+    keywords=["python", "EDI", "835", "X12"],
+    classifiers=[
+        "Development Status :: 3 - Alpha",
+    ],
     # tests_require=tests_require,
-    python_requires=">=3.9.0",
+    python_requires=">=3.11.5",
 )

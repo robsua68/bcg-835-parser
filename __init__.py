@@ -7,8 +7,8 @@ from warnings import warn
 
 
 # Local imports
-from Bcg_835_Parser.transaction_set.transaction_set import TransactionSet
-from Bcg_835_Parser.transaction_set.transaction_sets import TransactionSets
+from Rsa_835_Parser.transaction_set.transaction_set import TransactionSet
+from Rsa_835_Parser.transaction_set.transaction_sets import TransactionSets
 
 def parse(path: str, debug: bool = False) -> TransactionSets:
     """Parse EDI 835 files from a directory or a single file path"""
