@@ -23,7 +23,7 @@ remark_codes = {
 
 
 class RemarkCode(Element):
-    """Remark Code Class"""
+    """Remark Code class"""
 
     def parser(self, value: str) -> Code:
         description = remark_codes.get(value, None)

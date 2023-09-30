@@ -8,14 +8,14 @@ from rsa_835_parser.segments.utilities import split_segment
 
 
 class FinancialInformation:
-    """Financial Information Class segment"""
+    """Financial Information segment class"""
 
     identification = "BPR"
 
     identifier = Identifier()
     amount_paid = Dollars()
     payment_method = PaymentMethod()
-    rounting_number = Integer()
+    routing_number = Integer()
     transaction_date = Date()
 
     def __init__(self, segment: str):
@@ -25,15 +25,12 @@ class FinancialInformation:
         self.identifier = segment[0]
         self.amount_paid = segment[2]
         self.payment_method = segment[4]
-        self.rounting_number = segment[13]
+        self.routing_number = segment[13]
         self.transaction_date = segment[16]
 
-    def __repr__(self) -> str:
+    def __repr__(self):
         return "\n".join(str(item) for item in self.__dict__.items())
 
 
-# End-of-Class (FinancialInformation)
 if __name__ == "__main__":
     pass
-
-# End-of-file (EOF)

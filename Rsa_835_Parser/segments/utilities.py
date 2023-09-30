@@ -1,8 +1,5 @@
-""" Utilities for working with segments """
+""" utilities.py - helper functions for parsing 835 segments"""
 from typing import List, Optional
-
-## from pytz import NonExistentTimeError
-
 
 def split_segment(segment: str) -> List[str]:
     """different payers use different characters to delineate elements"""
@@ -18,17 +15,14 @@ def split_segment(segment: str) -> List[str]:
         return segment.split(pipe)
 
 
-# end def split_segment
-
-
 def find_identifier(segment) -> str:
-    """find the identifier for the segment"""
+    """finds the segment identifier"""
     segment = split_segment(segment)
     return segment[0]
 
 
-def get_element(segment: list[str], index: int, default=None) -> Optional[str]:
-    """get the element at the given index"""
+def get_element(segment: List[str], index: int, default=None) -> Optional[str]:
+    """gets an element from a segment"""
     element = default
     if index < len(segment):
         element = segment[index]

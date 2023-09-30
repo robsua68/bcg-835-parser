@@ -5,7 +5,7 @@ from rsa_835_parser.segments.utilities import split_segment
 
 
 class Reference:
-    """Reference (REF) segment Class"""
+    """Reference (REF) segment"""
 
     identification = "REF"
 
@@ -24,7 +24,7 @@ class Reference:
         return "\n".join(str(item) for item in self.__dict__.items())
 
     def __str__(self) -> str:
-        return f"{self.identifier}: {self.value}"
+        return f"{self.qualifier}: {self.value}"
 
 
 if __name__ == "__main__":

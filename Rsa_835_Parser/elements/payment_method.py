@@ -1,11 +1,15 @@
-""" Payment Method (BPR04) """
+""" Payment Method (PMT) - 3 characters """
 from rsa_835_parser.elements import Element
 
-payment_methods = {"ACH": "automatic deposit", "CHK": "check", "NON": "no payment"}
+payment_methods = {
+	'ACH': 'automatic deposit',
+	'CHK': 'check',
+	'NON': 'no payment'
+}
 
 
 class PaymentMethod(Element):
-    """Payment Method Class"""
+    """ Payment Method class """
 
     def parser(self, value: str) -> str:
         value = value.strip()

@@ -14,9 +14,10 @@ from rsa_835_parser.loops.service import Service as ServiceLoop
 
 
 class Claim:
-    """Claim Loop Class"""
+    """Claims Loop class"""
 
     initiating_identifier = ClaimSegment.identification
+
     terminating_identifiers = [ClaimSegment.identification, "SE"]
 
     def __init__(
@@ -35,12 +36,12 @@ class Claim:
         self.dates = dates if dates else []
         self.amount = amount
 
-    def __repr__(self) -> str:
+    def __repr__(self):
         return "\n".join(str(item) for item in self.__dict__.items())
 
     @property
     def rendering_provider(self) -> Optional[EntitySegment]:
-        """Rendering Provider"""
+        """ Rendering provider """
         rendering_provider = [
             e for e in self.entities if e.entity == "rendering provider"
         ]
@@ -51,29 +52,29 @@ class Claim:
 
     @property
     def claim_statement_period_start(self) -> Optional[DateSegment]:
-        """Claim Statement Period Start"""
-        claim_statement_period_start = [
+        """ Claim statement period start """
+        statement_period_start = [
             d for d in self.dates if d.qualifier == "claim statement period start"
         ]
-        assert len(claim_statement_period_start) <= 1
+        assert len(statement_period_start) <= 1
 
-        if len(claim_statement_period_start) == 1:
-            return claim_statement_period_start[0]
+        if len(statement_period_start) == 1:
+            return statement_period_start[0]
 
     @property
     def claim_statement_period_end(self) -> Optional[DateSegment]:
-        """Claim Statement Period End"""
-        claim_statement_period_end = [
+        """ Claim statement period end """
+        statement_period_end = [
             d for d in self.dates if d.qualifier == "claim statement period end"
         ]
-        assert len(claim_statement_period_end) <= 1
+        assert len(statement_period_end) <= 1
 
-        if len(claim_statement_period_end) == 1:
-            return claim_statement_period_end[0]
+        if len(statement_period_end) == 1:
+            return statement_period_end[0]
 
     @property
     def patient(self) -> EntitySegment:
-        """Patient"""
+        """ Patient """
         patient = [e for e in self.entities if e.entity == "patient"]
         assert len(patient) == 1
 
@@ -83,12 +84,11 @@ class Claim:
     def build(
         cls, segment: str, segments: Iterator[str]
     ) -> Tuple["Claim", Optional[Iterator[str]], Optional[str]]:
-        """Build Claim Loop"""
+        """ Build claim loop """
         claim = Claim()
         claim.claim = ClaimSegment(segment)
 
         segment = segments.__next__()
-
         while True:
             try:
                 if segment is None:
@@ -97,7 +97,7 @@ class Claim:
                 identifier = find_identifier(segment)
 
                 if identifier == ServiceLoop.initiating_identifier:
-                    service, segments, segment = ServiceLoop.build(segment, segments)
+                    service, segment, segments = ServiceLoop.build(segment, segments)
                     claim.services.append(service)
 
                 elif identifier == EntitySegment.identification:
@@ -116,7 +116,8 @@ class Claim:
                     segment = None
 
                 elif identifier == AmountSegment.identification:
-                    claim.amount = AmountSegment(segment)
+                    amount = AmountSegment(segment)
+                    claim.amount = amount
                     segment = None
 
                 elif identifier in cls.terminating_identifiers:

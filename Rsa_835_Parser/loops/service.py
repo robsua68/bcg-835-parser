@@ -18,10 +18,10 @@ from rsa_835_parser.elements.dollars import Dollars
 
 
 class Service:
-    """Service Loop Class"""
+    """Service Loop class"""
 
     initiating_identifier = ServiceSegment.identification
-    terminating_identifier = [
+    terminating_identifiers = [
         ServiceSegment.identification,
         ClaimSegment.identification,
         "SE",
@@ -43,19 +43,19 @@ class Service:
         self.amount = amount
         self.adjustments = adjustments if adjustments else []
 
-    def __repr__(self) -> str:
+    def __repr__(self):
         return "\n".join(str(item) for item in self.__dict__.items())
 
     @property
     def allowed_amount(self) -> Optional[Dollars]:
-        """ Allowed Amount """
+        """Allowed amount"""
         if self.amount:
             if self.amount.qualifier == "allowed - actual":
                 return self.amount.amount
 
     @property
     def service_date(self) -> Optional[DateSegment]:
-        """ Service Date """
+        """Service date"""
         service_date = [d for d in self.dates if d.qualifier == "service"]
         assert len(service_date) <= 1, f"{self.dates}"
 
@@ -63,8 +63,8 @@ class Service:
             return service_date[0]
 
     @property
-    def service_period_start(self) -> Optional[str]:
-        """ Service Period Start """
+    def service_period_start(self) -> Optional[DateSegment]:
+        """Service period start"""
         service_period_start = [
             d for d in self.dates if d.qualifier == "service period start"
         ]
@@ -76,12 +76,12 @@ class Service:
             return self.service_date
 
     @property
-    def service_period_end(self) -> Optional[str]:
-        """ Service Period End """
+    def service_period_end(self) -> Optional[DateSegment]:
+        """Service period end"""
         service_period_end = [
             d for d in self.dates if d.qualifier == "service period end"
         ]
-        assert len(service_period_end) <= 1, f"{self.dates}"
+        assert len(service_period_end) <= 1
 
         if len(service_period_end) == 1:
             return service_period_end[0]
@@ -92,7 +92,7 @@ class Service:
     def build(
         cls, segment: str, segments: Iterator[str]
     ) -> Tuple["Service", Optional[str], Optional[Iterator[str]]]:
-        """Build Service Loop Class Method """
+        """Build service loop"""
         service = Service()
         service.service = ServiceSegment(segment)
 
@@ -117,17 +117,18 @@ class Service:
                     service.references.append(reference)
 
                 elif identifier == ServiceAdjustmentSegment.identification:
-                    adjustment = ServiceAdjustmentSegment(segment)
-                    service.adjustments.append(adjustment)
+                    service.adjustments.append(ServiceAdjustmentSegment(segment))
+
+                elif identifier in cls.terminating_identifiers:
+                    return service, segment, segments
 
                 else:
-                    message = (
-                        f"Identifier: {identifier} not handled in service loop."
-                    )
+                    message = f"Identifier: {identifier} not handled in service loop."
                     warn(message)
 
             except StopIteration:
                 return service, None, None
+
 
 if __name__ == "__main__":
     pass

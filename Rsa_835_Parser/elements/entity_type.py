@@ -7,8 +7,9 @@ entity_types = {
     "2": "entity",
 }
 
+
 class EntityType(Element):
-    """Entity Type"""
+    """Entity Type class"""
 
     def parser(self, value: str) -> str:
         return entity_types.get(value, value)

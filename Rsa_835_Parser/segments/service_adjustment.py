@@ -7,7 +7,7 @@ from rsa_835_parser.segments.utilities import split_segment
 
 
 class ServiceAdjustment:
-    """Service Adjustment (CAS) segment Class"""
+    """Service Adjustment (CAS)"""
 
     identification = "CAS"
 
@@ -29,10 +29,5 @@ class ServiceAdjustment:
         return "\n".join(str(item) for item in self.__dict__.items())
 
 
-# end Class ServiceAdjustment
-
 if __name__ == "__main__":
     pass
-# end if __name__ == '__main__'
-
-# end of file

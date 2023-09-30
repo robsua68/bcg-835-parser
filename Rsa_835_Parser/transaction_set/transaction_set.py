@@ -137,8 +137,8 @@ class TransactionSet:
         claims = []
         organizations = []
 
-        with open(file_path, encoding="utf-8") as file:
-            file = file.read()
+        with open(file_path) as f:
+            file = f.read()
 
         segments = file.split("~")
         segments = [segment.strip() for segment in segments]

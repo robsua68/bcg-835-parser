@@ -5,14 +5,14 @@ from rsa_835_parser.elements import Element
 
 
 class Integer(Element):
-    """Integer Element Class"""
+    """ Integer class """
 
-    def parser(self, value: str) -> Optional[Union[int, float]]:
-        if value == "":
+    def parser(self, value: str) -> Optional[Union[int, str]]:
+        if value == '':
             return None
 
         try:
-            return int(value)
+            value = int(value)
         except ValueError:
             pass
 

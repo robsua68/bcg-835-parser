@@ -10,12 +10,11 @@ from rsa_835_parser.elements.identification_code_qualifier import (
 from rsa_835_parser.segments.utilities import split_segment, get_element
 
 class Entity:
-    """Entity Class segment"""
-
-    identification = "NM1"
+    """ Entity (NM1) segment class """
+    identification = 'NM1'
 
     identifier = Identifier()
-    entity_code = EntityCode()
+    entity = EntityCode()
     type = EntityType()
     identification_code_qualifier = IdentificationCodeQualifier()
 
@@ -31,19 +30,14 @@ class Entity:
         self.identification_code_qualifier = get_element(segment, 8)
         self.identification_code = get_element(segment, 9)
 
-    def __repr__(self) -> str:
-        return "\n".join(str(item) for item in self.__dict__.items())
+    def __repr__(self):
+        return '\n'.join(str(item) for item in self.__dict__.items())
 
-    # This property has been changed from the original code.
-    # Patient Name = Last Name, First Name in Uppercase
     @property
     def name(self) -> str:
-        """return the patient name"""
-        return f"{self.last_name}, {self.first_name}".upper()
+        """ Returns the name of the entity """
+        return f'{self.first_name} {self.last_name}'.title()
 
 
-# End-of-Class (Entity)
-if __name__ == "__main__":
+if __name__ == '__main__':
     pass
-
-# End-of-file (EOF)

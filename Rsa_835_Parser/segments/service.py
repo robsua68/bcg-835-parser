@@ -7,9 +7,8 @@ from rsa_835_parser.elements.service_modifier import ServiceModifier
 from rsa_835_parser.elements.integer import Integer
 from rsa_835_parser.segments.utilities import split_segment, get_element
 
-
 class Service:
-    """Service segment Class"""
+    """Service segment"""
 
     identification = "SVC"
 
@@ -43,10 +42,5 @@ class Service:
         return "\n".join(str(item) for item in self.__dict__.items())
 
 
-# end Class Service
-
 if __name__ == "__main__":
     pass
-# end if __name__ == '__main__'
-
-# end of file

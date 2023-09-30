@@ -4,11 +4,9 @@ from rsa_835_parser.elements.dollars import Dollars
 from rsa_835_parser.elements.amount_qualifier import AmountQualifier
 from rsa_835_parser.segments.utilities import split_segment
 
-
 class Amount:
-    """Amount (AMT) segment Class"""
-
-    identification = "AMT"
+    """ Amount (AMT) segment """
+    identification = 'AMT'
 
     identifier = Identifier()
     qualifier = AmountQualifier()
@@ -22,9 +20,9 @@ class Amount:
         self.qualifier = segment[1]
         self.amount = segment[2]
 
-    def __repr__(self) -> str:
-        return "\n".join(str(item) for item in self.__dict__.items())
+    def __repr__(self):
+        return '\n'.join(str(item) for item in self.__dict__.items())
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     pass

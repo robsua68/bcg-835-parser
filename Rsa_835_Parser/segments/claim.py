@@ -7,14 +7,15 @@ from rsa_835_parser.elements.dollars import Dollars
 from rsa_835_parser.segments.utilities import split_segment
 
 class Claim:
-    """Claim (CLP) segment Class"""
-
-    identification = "CLP"
+    """ Claim (CLP) segment class """
+    identification = 'CLP'
 
     identifier = Identifier()
     status = ClaimStatus()
     charge_amount = Dollars()
     paid_amount = Dollars()
+
+    # B Consulting Group needs to add the following elements to the claim segment: Claim Number
     claim_number: str = None
 
     def __init__(self, segment: str):
@@ -28,9 +29,9 @@ class Claim:
         self.paid_amount = segment[4]
         self.claim_number = segment[6]
 
-    def __repr__(self) -> str:
-        return "\n".join(str(item) for item in self.__dict__.items())
+    def __repr__(self):
+        return '\n'.join(str(item) for item in self.__dict__.items())
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     pass

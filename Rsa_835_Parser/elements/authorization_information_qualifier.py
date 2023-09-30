@@ -5,7 +5,7 @@ from rsa_835_parser.elements import Element
 
 
 class AuthorizationInformationQualifier(Element):
-    """Authorization Information Qualifier"""
+    """Authorization Information Qualifier class"""
 
     def parser(self, value: str) -> Optional[str]:
         if value == "00":

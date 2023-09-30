@@ -2,12 +2,13 @@
 from rsa_835_parser.elements import Element
 
 organization_types = {
-    "PE": "payee",
-    "PR": "payer",
+	'PE': 'payee',
+	'PR': 'payer',
 }
 
+
 class OrganizationType(Element):
-    """Organization Type Class"""
+    """ Organization Type class """
 
     def parser(self, value: str) -> str:
         value = value.strip()

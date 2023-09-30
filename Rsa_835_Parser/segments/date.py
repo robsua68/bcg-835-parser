@@ -5,9 +5,8 @@ from rsa_835_parser.elements.date_qualifier import DateQualifier
 from rsa_835_parser.segments.utilities import split_segment
 
 class Date:
-    """Date (DTM) segment Class"""
-
-    identification = "DTM"
+    """ Date (DTM) segment class """
+    identification = 'DTM'
 
     identifier = Identifier()
     date = DateElement()
@@ -21,9 +20,9 @@ class Date:
         self.qualifier = segment[1]
         self.date = segment[2]
 
-    def __repr__(self) -> str:
-        return "\n".join(str(item) for item in self.__dict__.items())
+    def __repr__(self):
+        return '\n'.join(str(item) for item in self.__dict__.items())
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     pass
