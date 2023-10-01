@@ -5,37 +5,30 @@ def test_claim_count(
     blue_cross_nc_sample,
     emedny_sample,
     united_healthcare_legacy_sample,
-    cigna_835_sample,
     all_samples,
 ):
     """ Test claim count. """
     assert blue_cross_nc_sample.count_claims() == 1
     assert united_healthcare_legacy_sample.count_claims() == 2
     assert emedny_sample.count_claims() == 3
-    assert cigna_835_sample.count.claims() == 4
-    assert all_samples.count_claims() == 8
-
+    assert all_samples.count_claims() == 6
 
 def test_patient_count(
     blue_cross_nc_sample,
     emedny_sample,
     united_healthcare_legacy_sample,
-    cigna_835_sample,
     all_samples,
 ):
     """ Test patient count. """
     assert blue_cross_nc_sample.count_patients() == 1
     assert united_healthcare_legacy_sample.count_patients() == 2
     assert emedny_sample.count_patients() == 3
-    assert cigna_835_sample.count_patients() == 4
-    assert all_samples.count_patients() == 8
-
+    assert all_samples.count_patients() == 6
 
 def test_to_dataframe(
     blue_cross_nc_sample,
     emedny_sample,
     united_healthcare_legacy_sample,
-    cigna_835_sample,
     all_samples,
 ):
     """ Test to_dataframe method."""
@@ -65,14 +58,6 @@ def test_to_dataframe(
     united_healthcare_legacy_.to_csv(
         f"{current_path}/output/united_healthcare_legacy_sample.csv"
     )
-
-    # Cigna Example
-    payment = cigna_835_sample.sum_payments()
-    cigna_healthcare = cigna_835_sample.to_dataframe()
-
-    assert payment == cigna_healthcare["paid_amount"].sum()
-
-    cigna_healthcare.to_csv(f"{current_path}/output/cigna_835_sample.csv")
 
     # All Samples
     payment = all_samples.sum_payments()

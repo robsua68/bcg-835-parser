@@ -6,11 +6,9 @@ from tkinter import E
 from typing import List
 from warnings import warn
 
-
 # Local imports
 from rsa_835_parser.transaction_set.transaction_set import TransactionSet
 from rsa_835_parser.transaction_set.transaction_sets import TransactionSets
-
 
 def parse(path: str, debug: bool = False) -> TransactionSets:
     """Parses EDI 835 files into a TransactionSets object"""
@@ -51,8 +49,10 @@ def _find_edi_835_files(path: str) -> List[str]:
 
 def main():
     """Main function"""
-    data = parse("~/Desktop/eobs").to_dataframe()
-    data.to_csv("~/Desktop/transaction_sets.csv")
+    # The original code // Later, try to find the error
+    # ---------------------------------------------------
+    # data = parse("~/Desktop/eobs").to_dataframe()
+    # data.to_csv("~/Desktop/transaction_sets.csv")
 
 
 if __name__ == "__main__":

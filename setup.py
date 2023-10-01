@@ -1,7 +1,7 @@
 """ Setup file for rsa-835-parser """
 from setuptools import setup, find_packages
 
-VERSION = "1.17.0"
+VERSION = "1.21.0"
 DESCRIPTION = "B Consulting Group EDI 835 file format parser."
 LONG_DESCRIPTION = (
     "B Consulting EDI 835 file format parser, extending the Keiron Stoddart version."

@@ -52,3 +52,6 @@ rsa_835_parser/segments/utilities.py
 rsa_835_parser/transaction_set/__init__.py
 rsa_835_parser/transaction_set/transaction_set.py
 rsa_835_parser/transaction_set/transaction_sets.py
+tests/__init__.py
+tests/conftest.py
+tests/test_edi_835_parser.py

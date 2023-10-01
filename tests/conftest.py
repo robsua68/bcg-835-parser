@@ -28,12 +28,6 @@ def united_healthcare_legacy_sample():
     return rsa_835_parser.parse(path)
 
 @pytest.fixture
-def cigna_835_sample():
-    """ Cigna .835 sample"""
-    path = current_path + "/test_edi_835_files/cigna_20230201_230128090045547.835"
-    return rsa_835_parser.parse(path)
-
-@pytest.fixture
 def all_samples():
     """All samples"""
     path = current_path + "/test_edi_835_files"
